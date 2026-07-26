@@ -4,143 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepStem – Offline AI Stem Separation for macOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(145deg, #0a0416 0%, #1e1236 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
         }
-        .card {
-            max-width: 480px;
+        .container {
+            max-width: 700px;
             width: 100%;
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(30px);
+            border-radius: 2.5rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.08);
             text-align: center;
-            box-shadow: 0 20px 50px rgba(108,92,231,0.25);
-            border: 1px solid rgba(255,255,255,0.1);
         }
-        .card img {
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         }
-        h1 { font-size: 2.4em; font-weight: 700; margin-bottom: 0.1em; }
-        .tagline { color: #b8b5ff; font-size: 1.1em; margin-bottom: 1.5em; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b8b5ff;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .description {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
         .features {
             list-style: none;
             text-align: left;
             display: inline-block;
-            margin-bottom: 2em;
-            color: #dcdcdc;
+            margin-bottom: 2.5rem;
         }
-        .features li { margin-bottom: 0.4em; }
-        .price { font-size: 1.5em; font-weight: 600; margin: 1.2em 0 0.8em; }
-        .btn {
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1rem;
+            color: #e5e7eb;
+            margin-bottom: 0.7rem;
+        }
+        .features li::before {
+            content: "•";
+            color: #a78bfa;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .price-tag {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 2rem 0 1.2rem;
+            background: rgba(108,92,231,0.15);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            border-radius: 3rem;
+            border: 1px solid rgba(108,92,231,0.3);
+        }
+        .btn-buy {
             display: inline-block;
             background: #6c5ce7;
             color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-size: 1.2em;
-            font-weight: bold;
+            padding: 1.2rem 3rem;
+            border-radius: 3rem;
+            font-size: 1.3rem;
+            font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(108,92,231,0.5);
+            box-shadow: 0 12px 30px rgba(108,92,231,0.5);
             transition: transform 0.2s, box-shadow 0.2s;
             border: none;
             cursor: pointer;
+            letter-spacing: 0.02em;
         }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(108,92,231,0.7); }
+        .btn-buy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(108,92,231,0.7);
+        }
+        .discount-note {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #9ca3af;
+        }
         .discount-section {
-            margin-top: 2em;
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 20px;
+            margin-top: 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem;
+            justify-content: center;
         }
         .discount-section input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            border-radius: 0.7rem;
             border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.06);
             color: white;
-            font-size: 1em;
-            margin-bottom: 10px;
+            font-size: 1rem;
             outline: none;
+            min-width: 180px;
         }
-        .discount-section input::placeholder { color: #aaa; }
+        .discount-section input::placeholder {
+            color: #9ca3af;
+        }
         .discount-btn {
-            width: 100%;
             background: transparent;
             border: 1px solid #6c5ce7;
-            color: #a29bfe;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 1em;
+            color: #a78bfa;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.7rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: background 0.2s;
+            font-weight: 600;
         }
-        .discount-btn:hover { background: rgba(108,92,231,0.2); }
-        .footer-note { font-size: 0.85em; color: #888; margin-top: 1.5em; }
+        .discount-btn:hover {
+            background: rgba(108,92,231,0.15);
+        }
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .footer-note a {
+            color: #a78bfa;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <img src="deepstem.png" alt="DeepStem icon">
+    <div class="container">
+        <img src="deepstem.png" alt="DeepStem icon" class="logo">
 
         <h1>DeepStem</h1>
-        <p class="tagline">State‑of‑the‑art AI stem separation for macOS</p>
+        <p class="subtitle">State‑of‑the‑art AI stem separation for macOS</p>
+
+        <p class="description">
+            DeepStem uses advanced Demucs AI to extract vocals and instrumentals from any audio track – entirely offline.
+            No uploads, no subscriptions, just your music, your Mac, and studio‑quality stems.
+        </p>
 
         <ul class="features">
             <li>🎤 Vocal & instrumental extraction</li>
-            <li>🔒 100% offline – your audio never leaves your Mac</li>
-            <li>💰 One‑time purchase – no subscriptions</li>
-            <li>📁 Export WAV, MP3 (320kbps), AIFF</li>
+            <li>🔒 100% offline – your audio stays private</li>
+            <li>💰 One‑time purchase, no recurring fees</li>
+            <li>📁 Export WAV, MP3 (320kbps), or AIFF</li>
+            <li>🧠 Powered by Demucs htdemucs – state‑of‑the‑art AI</li>
+            <li>🎛️ Simple drag‑and‑drop interface</li>
         </ul>
 
-        <div class="price">£5.00</div>
+        <div class="price-tag">£5.00</div>
 
-        <!-- Main Stripe Checkout button (full price) -->
-        <a class="btn" id="buyNowBtn" 
-           href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" 
-           target="_blank">
+        <!-- Main Stripe Checkout button -->
+        <a href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" target="_blank" class="btn-buy">
             Buy for £5
         </a>
 
-        <p style="margin-top:1em; font-size:0.9em; color:#ccc;">
+        <p style="margin-top:1.2rem; font-size:0.95rem; color:#9ca3af;">
             Secure payment via Stripe • Instant email delivery
         </p>
 
-        <!-- Discount code section -->
+        <!-- Optional discount code section (keep or remove as you like) -->
         <div class="discount-section">
-            <label style="display:block; margin-bottom:6px; color:#b8b5ff;">Have a discount code?</label>
-            <input type="text" id="discountCode" placeholder="Enter code">
-            <button class="discount-btn" onclick="applyDiscount()">Apply Discount</button>
+            <input type="text" id="discountCode" placeholder="Have a discount code?">
+            <button class="discount-btn" onclick="applyDiscount()">Apply</button>
         </div>
 
         <p class="footer-note">
-            By purchasing, you agree to our <a href="https://djkoast.github.io/deepstem-privacy/" style="color:#a29bfe;">Privacy Policy</a>.
+            By purchasing, you agree to our <a href="https://djkoast.github.io/deepstem-privacy/" target="_blank">Privacy Policy</a>.
         </p>
     </div>
 
     <script>
-        // ─── Discount codes → Stripe payment links or direct download ─────
+        // Optional discount code logic – customize with your own links
         const DISCOUNT_LINKS = {
-            // "FRIENDS" code gives a free direct download (replace with your actual .dmg link)
-            "FRIENDS":  "https://your-server.com/DeepStem.dmg",   // FREE – direct download
-            // "LAUNCH20" gives 20% off (£4) – replace with your Stripe link for £4
-            "LAUNCH20": "https://buy.stripe.com/…your_£4_link…",
-            // "STUDENT" gives 40% off (£3) – replace with your Stripe link for £3
-            "STUDENT":  "https://buy.stripe.com/…your_£3_link…"
+            "FRIENDS":  "https://buy.stripe.com/YOUR_FREE_OR_DISCOUNT_LINK",   // free or discounted
+            "LAUNCH20": "https://buy.stripe.com/YOUR_£4_LINK",
+            "STUDENT":  "https://buy.stripe.com/YOUR_£3_LINK"
         };
 
         function applyDiscount() {
@@ -149,7 +227,6 @@
                 alert("Please enter a discount code.");
                 return;
             }
-
             const link = DISCOUNT_LINKS[code];
             if (link) {
                 window.open(link, "_blank");
@@ -160,3 +237,4 @@
     </script>
 </body>
 </html>
+
