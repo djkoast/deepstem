@@ -13,154 +13,94 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(145deg, #0a0416 0%, #1e1236 100%);
-            color: #ffffff;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+            color: #f0e6ff;
+            line-height: 1.7;
             padding: 2rem 1.5rem;
         }
-        section {
-            padding: 3rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        section:last-of-type { border-bottom: none; }
-
-        /* Hero card */
-        .hero-card {
-            background: rgba(255,255,255,0.04);
-            backdrop-filter: blur(30px);
-            border-radius: 2.5rem;
-            padding: 3rem 2rem;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.08);
-            text-align: center;
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
         }
         .logo {
-            width: 100px;
+            display: block;
+            width: 90px;
             height: auto;
-            margin-bottom: 1.5rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            margin: 0 auto 2rem;
+            border-radius: 1.2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         h1 {
-            font-size: 3rem;
+            text-align: center;
+            font-size: 2.8rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.3rem;
-            background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+            background: linear-gradient(135deg, #d0bcff, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
         }
         .subtitle {
-            font-size: 1.3rem;
+            text-align: center;
+            font-size: 1.2rem;
             color: #b8b5ff;
-            margin-bottom: 2rem;
-            font-weight: 400;
+            margin-bottom: 3rem;
         }
-        .description {
-            font-size: 1.1rem;
-            color: #d1d5db;
-            margin-bottom: 2.5rem;
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
+        h2 {
+            font-size: 1.8rem;
+            color: #c4b5fd;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
         }
-        .price-tag {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 2rem 0 1.2rem;
-            background: rgba(108,92,231,0.15);
-            display: inline-block;
-            padding: 0.5rem 2rem;
-            border-radius: 3rem;
-            border: 1px solid rgba(108,92,231,0.3);
-        }
-        .btn-buy {
-            display: inline-block;
-            background: #6c5ce7;
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 3rem;
+        h3 {
             font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 12px 30px rgba(108,92,231,0.5);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.02em;
+            color: #e5e7eb;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
         }
-        .btn-buy:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(108,92,231,0.7); }
-        .discount-note { margin-top: 1.5rem; font-size: 0.95rem; color: #9ca3af; }
-        .discount-section {
-            margin-top: 1.5rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 1rem;
-            padding: 1.2rem 1.5rem;
-            display: inline-flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.8rem;
-            justify-content: center;
+        p {
+            margin-bottom: 1.2rem;
+            color: #d1d5db;
         }
-        .discount-section input {
-            padding: 0.7rem 1rem;
-            border-radius: 0.7rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.06);
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            min-width: 180px;
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: #d1d5db;
         }
-        .discount-section input::placeholder { color: #9ca3af; }
-        .discount-btn {
-            background: transparent;
-            border: 1px solid #6c5ce7;
-            color: #a78bfa;
-            padding: 0.7rem 1.5rem;
-            border-radius: 0.7rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            font-weight: 600;
+        li {
+            margin-bottom: 0.5rem;
         }
-        .discount-btn:hover { background: rgba(108,92,231,0.15); }
-        .footer-note { font-size: 0.85rem; color: #6b7280; }
-        .footer-note a { color: #a78bfa; text-decoration: none; }
-
-        /* Typography for sections */
-        h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #c4b5fd; }
-        h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #e5e7eb; }
-        p { margin-bottom: 1.2rem; color: #d1d5db; }
-        ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #d1d5db; }
-        li { margin-bottom: 0.5rem; }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
         }
-        .feature-item {
+        .feature-card {
             background: rgba(255,255,255,0.04);
-            border-radius: 1.5rem;
+            border-radius: 1.2rem;
             padding: 1.5rem;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.06);
         }
-        .feature-item .icon { font-size: 2rem; margin-bottom: 0.8rem; }
-        .feature-item h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; color: #e5e7eb; }
+        .feature-card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+        }
+        .feature-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #e5e7eb;
+        }
         .comparison-box {
             background: rgba(255,255,255,0.03);
             border-radius: 1rem;
             padding: 1.5rem 2rem;
             border: 1px solid rgba(255,255,255,0.08);
+            margin: 1.5rem 0;
         }
-        .comparison-box p strong { color: #a78bfa; }
+        .comparison-box p strong {
+            color: #a78bfa;
+        }
         .code-block {
             background: rgba(0,0,0,0.3);
             border-radius: 0.8rem;
@@ -178,168 +118,238 @@
             border-radius: 0 0.8rem 0.8rem 0;
             margin: 1.5rem 0;
         }
-        .back-to-top {
+        .purchase-section {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
-            margin-top: 2rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            margin-top: 4rem;
         }
-        .back-to-top a {
+        .purchase-section .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .btn-buy {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(108,92,231,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(108,92,231,0.6);
+        }
+        .discount-box {
+            margin-top: 1.2rem;
+            display: flex;
+            gap: 0.6rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .discount-box input {
+            padding: 0.7rem 1rem;
+            border-radius: 0.7rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.06);
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            min-width: 180px;
+        }
+        .discount-box input::placeholder {
+            color: #9ca3af;
+        }
+        .discount-box button {
+            background: transparent;
+            border: 1px solid #6c5ce7;
+            color: #a78bfa;
+            padding: 0.7rem 1.2rem;
+            border-radius: 0.7rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .discount-box button:hover {
+            background: rgba(108,92,231,0.15);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .footer a {
             color: #a78bfa;
             text-decoration: none;
-            font-weight: 500;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Logo & Friendly Header -->
+        <img src="deepstem.png" alt="DeepStem icon" class="logo">
+        <h1>DeepStem</h1>
+        <p class="subtitle">State‑of‑the‑art AI stem separation for macOS — offline, private, and built by a DJ for DJs, producers, and anyone who loves music.</p>
 
-        <!-- ─── HERO ──────────────────────────────────────────────────── -->
-        <section id="hero">
-            <div class="hero-card">
-                <img src="deepstem.png" alt="DeepStem icon" class="logo">
-                <h1>DeepStem</h1>
-                <p class="subtitle">State‑of‑the‑art AI stem separation for macOS</p>
-                <p class="description">
-                    DeepStem uses advanced Demucs AI to extract vocals and instrumentals from any audio track – entirely offline.
-                    No uploads, no subscriptions, just your music, your Mac, and studio‑quality stems.
-                </p>
-                <div class="price-tag">£5.00</div>
-                <br>
-                <a href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" target="_blank" class="btn-buy">Buy for £5</a>
-                <p style="margin-top:1.2rem; font-size:0.95rem; color:#9ca3af;">Secure payment via Stripe • Instant email delivery</p>
-                <div class="discount-section">
-                    <input type="text" id="discountCode" placeholder="Have a discount code?">
-                    <button class="discount-btn" onclick="applyDiscount()">Apply</button>
-                </div>
-                <p class="footer-note" style="margin-top:2rem;">
-                    By purchasing, you agree to our <a href="https://djkoast.github.io/deepstem-privacy/" target="_blank">Privacy Policy</a>.
-                </p>
+        <!-- Why I Made This (Personal Story) -->
+        <h2>Why I Built DeepStem</h2>
+        <p>
+            <strong>This is my first app.</strong> I'm a DJ first, and I got tired of uploading my tracks to random cloud services just to get a vocal stem.
+            I didn't want to pay a subscription every month, and I definitely didn't want anyone else listening to my unreleased music.
+            So I taught myself to code, and DeepStem was born.
+        </p>
+        <p>
+            It uses the same Demucs AI that researchers and major studios trust, but it runs completely offline on your own Mac.
+            No internet needed, no account, no data collection — ever.
+        </p>
+        <p>
+            <strong>I'm already working on an upgraded version that will separate drums, bass, piano, and more — a true multi‑instrument toolkit.</strong>
+            Everyone who buys DeepStem now will get a special upgrade price when that Pro version launches. The app stays with you offline, always ready, like a trusted piece of gear.
+        </p>
+        <p>
+            I built DeepStem to be simple — drag in a track, click a button, get your stems. It uses the latest technological innovations under the hood, but the experience is as straightforward as an old‑school piece of hardware. And that's reflected in the price: one‑time, no subscriptions, like buying a tool instead of renting it.
+        </p>
+        <p>
+            <strong>I'd love to know what you think.</strong> If you try it, send me a message and tell me what you made with it. Your feedback will directly shape the future of this app.
+        </p>
+
+        <!-- Features (What You Get) -->
+        <h2>What DeepStem Can Do for You</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">🎤</div>
+                <h4>Clean Vocal & Instrumental Separation</h4>
+                <p>Extract vocals and instrumentals with stunning clarity. Perfect for remixes, acapellas, and backing tracks.</p>
             </div>
-        </section>
-
-        <!-- ─── FEATURES ─────────────────────────────────────────────── -->
-        <section id="features">
-            <h2>What You Get</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="icon">🎤</div>
-                    <h4>Clean Vocal & Instrumental Separation</h4>
-                    <p>Powered by Demucs htdemucs, the same AI used by professional audio researchers. Extracts vocals and the full instrumental backing with stunning clarity.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">🔒</div>
-                    <h4>100% Offline & Private</h4>
-                    <p>Everything runs on your Mac. Your audio never leaves your computer – no cloud, no uploads, no data collection.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">💰</div>
-                    <h4>One‑Time Purchase</h4>
-                    <p>No subscriptions, no monthly bills. You pay once, you own DeepStem forever. Even future updates are included.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">📁</div>
-                    <h4>Multiple Export Formats</h4>
-                    <p>Export your stems as high‑quality WAV, MP3 (320 kbps), or AIFF – ready for your DAW, sampler, or media player.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">🧠</div>
-                    <h4>State‑of‑the‑art AI Model</h4>
-                    <p>DeepStem uses the latest Demucs htdemucs model – constantly improved by the open‑source community. No subscription‑locked algorithms.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon">🎛️</div>
-                    <h4>Simple Drag‑and‑Drop</h4>
-                    <p>Just drop an audio file into the app, click “Separate”, and get your stems in seconds. No complex settings.</p>
-                </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h4>100% Offline & Private</h4>
+                <p>Your music never leaves your computer. No uploads, no cloud — total peace of mind.</p>
             </div>
-        </section>
-
-        <!-- ─── HOW IT WORKS ──────────────────────────────────────────── -->
-        <section id="how-it-works">
-            <h2>How It Works</h2>
-            <ol>
-                <li><strong>Install DeepStem</strong> – download the app and run the one‑time setup (takes 5 minutes – see guide below).</li>
-                <li><strong>Drag in a song</strong> – MP3, WAV, AIFF, FLAC, M4A – DeepStem accepts them all.</li>
-                <li><strong>Click “Separate”</strong> – the AI processes your track offline and gives you two files: vocals and instrumental.</li>
-                <li><strong>Export & create</strong> – save your stems and load them into your DAW, DJ software, or music player.</li>
-            </ol>
-            <div class="note">
-                <strong>No internet required.</strong> After the initial setup, DeepStem works completely offline – on a plane, in a remote studio, or anywhere you create.
+            <div class="feature-card">
+                <div class="icon">💰</div>
+                <h4>One‑Time Purchase, No Catch</h4>
+                <p>You buy it once, you own it forever. No subscriptions, no recurring fees. Even future updates are free.</p>
             </div>
-        </section>
-
-        <!-- ─── WHY DEEPSTEM? (Ethical Comparison) ─────────────────────── -->
-        <section id="why-deepstem">
-            <h2>Why DeepStem Exists</h2>
-            <p>Most stem separation tools charge a recurring subscription – often £10–£30 per month – and require you to upload your audio to a cloud server. That means:</p>
-            <div class="comparison-box">
-                <p><strong>❌ The typical subscription model:</strong></p>
-                <ul>
-                    <li>Monthly or yearly fees that never end</li>
-                    <li>Your music is uploaded to a third‑party server</li>
-                    <li>Privacy policies often allow data mining</li>
-                    <li>You're locked into paying forever, or you lose access</li>
-                </ul>
-                <p style="margin-top:1.5rem;"><strong>✅ The DeepStem difference:</strong></p>
-                <ul>
-                    <li><strong>One‑time £5 purchase</strong> – no recurring charges</li>
-                    <li><strong>100% offline</strong> – your audio never leaves your Mac</li>
-                    <li><strong>Zero data collection</strong> – we can't access your music, ever</li>
-                    <li><strong>Free updates</strong> – no upgrade fees, no feature paywalls</li>
-                </ul>
+            <div class="feature-card">
+                <div class="icon">📁</div>
+                <h4>Export as WAV, MP3 (320kbps), or AIFF</h4>
+                <p>Get your stems ready for any DAW, sampler, or media player. High‑quality output every time.</p>
             </div>
-            <p style="margin-top:1.5rem;">The industry average annual cost for cloud‑based stem separation is around £120. DeepStem costs <strong>£5 once</strong>. That's not a sale – it's our permanent, ethical price.</p>
-        </section>
-
-        <!-- ─── SETUP GUIDE ───────────────────────────────────────────── -->
-        <section id="setup-guide">
-            <h2>One‑Time Setup Guide</h2>
-            <p>Before you can separate your first track, you need to install Python 3 and the Demucs library. This takes about 5 minutes and only needs to be done once.</p>
-            <h3>Step 1: Install Python 3</h3>
-            <p>Open the <strong>Terminal</strong> app (press ⌘+Space, type “Terminal”, hit Enter) and paste this line:</p>
-            <div class="code-block">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</div>
-            <p>Follow any on‑screen prompts. When Homebrew is ready, run:</p>
-            <div class="code-block">brew install python@3.12</div>
-            <h3>Step 2: Install Demucs</h3>
-            <p>In the same Terminal window, run:</p>
-            <div class="code-block">pip3 install demucs</div>
-            <p>That's it! The first time you use DeepStem, the AI model will download automatically (this takes a few minutes, but only once).</p>
-            <div class="note">
-                <strong>Optional:</strong> For extra audio format support (like AIFF and M4A), install ffmpeg by running:
-                <div class="code-block" style="margin-top:0.5rem;">brew install ffmpeg</div>
+            <div class="feature-card">
+                <div class="icon">🧠</div>
+                <h4>Demucs htdemucs AI</h4>
+                <p>Powered by the same open‑source model used in research labs — constantly improved, never locked behind a paywall.</p>
             </div>
-        </section>
-
-        <!-- ─── FAQ ───────────────────────────────────────────────────── -->
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <h3>Does DeepStem work without an internet connection?</h3>
-            <p>Yes. After the initial setup, DeepStem works completely offline. No internet is needed to separate tracks.</p>
-            <h3>Can I use DeepStem on multiple Macs?</h3>
-            <p>Absolutely. Your purchase is tied to you, not a single device. Install it on all your personal Macs.</p>
-            <h3>What audio formats does it support?</h3>
-            <p>WAV, MP3, M4A, AIFF, FLAC. With optional ffmpeg installed, even more formats become available.</p>
-            <h3>Is the AI model updated?</h3>
-            <p>DeepStem uses the open‑source Demucs model, which is continuously improved by the research community. You'll always have access to the latest advancements without paying extra.</p>
-            <h3>Can I get a refund?</h3>
-            <p>Due to the digital nature of the product, refunds are not automatically offered. However, if you encounter any technical issues, email <strong>djkoast@hotmail.com</strong> and we'll sort it out.</p>
-        </section>
-
-        <!-- ─── FINAL CALL TO ACTION ──────────────────────────────────── -->
-        <section id="buy-now">
-            <div class="hero-card">
-                <h2 style="color:white;">Ready to Separate Your Stems?</h2>
-                <div class="price-tag">£5.00</div>
-                <br>
-                <a href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" target="_blank" class="btn-buy">Buy DeepStem Now</a>
-                <p style="margin-top:1.5rem; color:#9ca3af;">One‑time purchase · Free updates · No subscription</p>
+            <div class="feature-card">
+                <div class="icon">🎛️</div>
+                <h4>Simple Drag‑and‑Drop</h4>
+                <p>Just drop an audio file, click "Separate", and you're done. No complex settings to tweak.</p>
             </div>
-        </section>
+        </div>
 
-        <!-- ─── FOOTER ────────────────────────────────────────────────── -->
-        <footer style="text-align:center; padding:2rem 0; color:#6b7280; font-size:0.9rem;">
-            <p>DeepStem is built by Koast · <a href="https://djkoast.github.io/deepstem-privacy/" style="color:#a78bfa;">Privacy Policy</a></p>
-        </footer>
+        <!-- How It Works -->
+        <h2>How It Works</h2>
+        <ol>
+            <li>Drag any audio file (WAV, MP3, FLAC, AIFF, M4A) into DeepStem.</li>
+            <li>Click <strong>"Separate"</strong> — the AI processes your track locally.</li>
+            <li>In seconds, you get two files: <strong>vocals</strong> and <strong>instrumental</strong>.</li>
+            <li>Export them and drop them into your DAW, DJ software, or music player.</li>
+        </ol>
+        <div class="note">
+            <strong>No internet required.</strong> After the one‑time setup, DeepStem works anywhere — on a plane, in a remote studio, or wherever your creativity takes you.
+        </div>
 
+        <!-- The Market Reality (No Names) -->
+        <h2>What You Usually Find Out There</h2>
+        <p>
+            Most stem separation tools today require a monthly subscription — usually £10–£30 per month.
+            They also demand that you upload your audio to a cloud server, where your music is processed on someone else's machine.
+            That means ongoing bills, privacy risks, and a loss of control over your own tracks.
+        </p>
+        <div class="comparison-box">
+            <p><strong>❌ The typical model:</strong></p>
+            <ul>
+                <li>Recurring monthly or annual fees</li>
+                <li>Audio must be uploaded to a remote server</li>
+                <li>Privacy policies often allow data mining</li>
+                <li>You stop paying → you lose access</li>
+            </ul>
+            <p style="margin-top:1.5rem;"><strong>✅ DeepStem's approach:</strong></p>
+            <ul>
+                <li><strong>£5, once</strong> – no recurring charges, ever</li>
+                <li><strong>100% offline</strong> – your audio never leaves your Mac</li>
+                <li><strong>Zero data collection</strong> – we can't see your files, we don't want to</li>
+                <li><strong>Free updates for life</strong> – no upgrade traps</li>
+            </ul>
+        </div>
+        <p>
+            The industry average annual cost for cloud‑based stem separation is around £120.
+            DeepStem costs <strong>£5 once</strong>. That's not a promotion — it's our permanent, ethical price.
+        </p>
+
+        <!-- One‑Time Setup Guide -->
+        <h2>One‑Time Setup (Takes 5 Minutes)</h2>
+        <p>Before you can separate your first track, you need to install Python 3 and Demucs. This is only needed once.</p>
+        <h3>1. Install Python 3</h3>
+        <p>Open <strong>Terminal</strong> (press ⌘+Space, type "Terminal", hit Enter) and paste:</p>
+        <div class="code-block">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</div>
+        <p>Follow the on‑screen instructions. Then, when Homebrew is ready, type:</p>
+        <div class="code-block">brew install python@3.12</div>
+        <h3>2. Install Demucs</h3>
+        <p>In the same Terminal window, run:</p>
+        <div class="code-block">pip3 install demucs</div>
+        <p>That's it! The first time you use DeepStem, the AI model will download automatically (a couple of minutes). After that, everything runs offline.</p>
+        <div class="note">
+            <strong>Optional:</strong> For extra format support (AIFF, M4A), install ffmpeg:
+            <div class="code-block" style="margin-top:0.5rem;">brew install ffmpeg</div>
+        </div>
+
+        <!-- FAQs -->
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does DeepStem work without internet?</h3>
+        <p>Yes. After the initial setup, you never need to be online. It's fully offline.</p>
+        <h3>Can I use it on more than one Mac?</h3>
+        <p>Yes, your purchase is personal. Install it on all your own Macs.</p>
+        <h3>What formats does it support?</h3>
+        <p>WAV, MP3, M4A, AIFF, FLAC. With ffmpeg installed, even more.</p>
+        <h3>Will the AI model get better?</h3>
+        <p>The Demucs model is open‑source and constantly improved. You'll always benefit from the latest advancements, no extra charge.</p>
+        <h3>Can I get a refund?</h3>
+        <p>Because it's a digital product, refunds aren't automatic. But if you have any trouble, email <strong>djkoast@hotmail.com</strong> — we'll sort it out.</p>
+
+        <!-- Purchase Section (at the very bottom) -->
+        <div class="purchase-section">
+            <h2 style="color:white; margin-top:0;">Own It Forever</h2>
+            <div class="price">£5.00</div>
+            <p style="color:#d1d5db; margin-bottom:1.5rem;">One‑time purchase. No subscriptions, no ads, no data collection.</p>
+            <a href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" target="_blank" class="btn-buy">Buy DeepStem for £5</a>
+            <div class="discount-box">
+                <input type="text" id="discountCode" placeholder="Have a discount code?">
+                <button onclick="applyDiscount()">Apply</button>
+            </div>
+            <p style="margin-top:1.2rem; font-size:0.9rem; color:#9ca3af;">
+                Secure payment via Stripe · Instant email delivery
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>DeepStem is built with love by Koast · <a href="https://djkoast.github.io/deepstem-privacy/">Privacy Policy</a></p>
+        </div>
     </div>
 
     <script>
