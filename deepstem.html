@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepStem – Offline AI Stem Separation for macOS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(145deg, #0a0416 0%, #1e1236 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(108,92,231,0.25);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 { font-size: 2.4em; font-weight: 700; margin-bottom: 0.1em; }
+        .tagline { color: #b8b5ff; font-size: 1.1em; margin-bottom: 1.5em; }
+        .features {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 2em;
+            color: #dcdcdc;
+        }
+        .features li { margin-bottom: 0.4em; }
+        .price { font-size: 1.5em; font-weight: 600; margin: 1.2em 0 0.8em; }
+        .btn {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(108,92,231,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(108,92,231,0.7); }
+        .discount-section {
+            margin-top: 2em;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .discount-section input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 1em;
+            margin-bottom: 10px;
+            outline: none;
+        }
+        .discount-section input::placeholder { color: #aaa; }
+        .discount-btn {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #6c5ce7;
+            color: #a29bfe;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .discount-btn:hover { background: rgba(108,92,231,0.2); }
+        .footer-note { font-size: 0.85em; color: #888; margin-top: 1.5em; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="deepstem.png" alt="DeepStem icon">
+
+        <h1>DeepStem</h1>
+        <p class="tagline">State‑of‑the‑art AI stem separation for macOS</p>
+
+        <ul class="features">
+            <li>🎤 Vocal & instrumental extraction</li>
+            <li>🔒 100% offline – your audio never leaves your Mac</li>
+            <li>💰 One‑time purchase – no subscriptions</li>
+            <li>📁 Export WAV, MP3 (320kbps), AIFF</li>
+        </ul>
+
+        <div class="price">£5.00</div>
+
+        <!-- Main Stripe Checkout button (full price) -->
+        <a class="btn" id="buyNowBtn" 
+           href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" 
+           target="_blank">
+            Buy for £5
+        </a>
+
+        <p style="margin-top:1em; font-size:0.9em; color:#ccc;">
+            Secure payment via Stripe • Instant email delivery
+        </p>
+
+        <!-- Discount code section -->
+        <div class="discount-section">
+            <label style="display:block; margin-bottom:6px; color:#b8b5ff;">Have a discount code?</label>
+            <input type="text" id="discountCode" placeholder="Enter code">
+            <button class="discount-btn" onclick="applyDiscount()">Apply Discount</button>
+        </div>
+
+        <p class="footer-note">
+            By purchasing, you agree to our <a href="https://djkoast.github.io/deepstem-privacy/" style="color:#a29bfe;">Privacy Policy</a>.
+        </p>
+    </div>
+
+    <script>
+        // ─── Discount codes → Stripe payment links or direct download ─────
+        const DISCOUNT_LINKS = {
+            // "FRIENDS" code gives a free direct download (replace with your actual .dmg link)
+            "FRIENDS":  "https://your-server.com/DeepStem.dmg",   // FREE – direct download
+            // "LAUNCH20" gives 20% off (£4) – replace with your Stripe link for £4
+            "LAUNCH20": "https://buy.stripe.com/…your_£4_link…",
+            // "STUDENT" gives 40% off (£3) – replace with your Stripe link for £3
+            "STUDENT":  "https://buy.stripe.com/…your_£3_link…"
+        };
+
+        function applyDiscount() {
+            const code = document.getElementById("discountCode").value.trim().toUpperCase();
+            if (!code) {
+                alert("Please enter a discount code.");
+                return;
+            }
+
+            const link = DISCOUNT_LINKS[code];
+            if (link) {
+                window.open(link, "_blank");
+            } else {
+                alert("Invalid discount code. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
