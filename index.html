@@ -13,7 +13,7 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #ffffff;
-            color: #1e293b;
+            color: #111827;
             line-height: 1.7;
         }
         .container {
@@ -21,58 +21,33 @@
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
-        /* ── Header / Logo ─────────────────────────── */
+
+        /* Header / Logo */
         .header {
             text-align: center;
             margin-bottom: 4rem;
         }
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
+        .logo {
+            width: 80px;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             margin-bottom: 1.5rem;
         }
-        .logo-img {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            object-fit: cover;
-        }
-        /* Fallback if image fails: an elegant SVG text logo */
-        .logo-fallback {
-            display: none;
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.02em;
-        }
-        .logo-img.error ~ .logo-fallback,
-        .logo-img[src=""],
-        .logo-img:not([src]) {
-            display: inline-block;
-        }
-        /* If image exists, hide fallback */
-        .logo-fallback { display: none; }
-        .logo-img:not(.error) ~ .logo-fallback { display: none; }
-
         h1 {
             font-size: 3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #1e3a8a;
+            letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
         }
         .subtitle {
             font-size: 1.2rem;
-            color: #475569;
+            color: #4b5563;
             font-weight: 400;
         }
-        /* ── Sections ──────────────────────────────── */
+
+        /* Sections */
         section {
             margin-bottom: 4rem;
         }
@@ -84,22 +59,26 @@
         }
         h3 {
             font-size: 1.3rem;
-            color: #334155;
+            color: #1f2937;
             margin: 1.5rem 0 0.8rem;
         }
         p {
             margin-bottom: 1.2rem;
-            color: #475569;
+            color: #374151;
         }
         ul, ol {
             margin-bottom: 1.5rem;
             padding-left: 1.5rem;
-            color: #475569;
+            color: #374151;
         }
-        li { margin-bottom: 0.5rem; }
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Feature Grid */
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.2rem;
             margin: 2rem 0;
         }
@@ -122,8 +101,10 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.4rem;
-            color: #1e293b;
+            color: #111827;
         }
+
+        /* Comparison Box */
         .comparison-box {
             background: #f1f5f9;
             border-radius: 1rem;
@@ -134,6 +115,8 @@
         .comparison-box p strong {
             color: #1e40af;
         }
+
+        /* Code Block */
         .code-block {
             background: #f1f5f9;
             border-radius: 0.8rem;
@@ -145,6 +128,8 @@
             margin: 1rem 0;
             border: 1px solid #e2e8f0;
         }
+
+        /* Note / Tip */
         .note {
             background: #eff6ff;
             border-left: 4px solid #3b82f6;
@@ -152,7 +137,8 @@
             border-radius: 0 0.8rem 0.8rem 0;
             margin: 1.5rem 0;
         }
-        /* ── Purchase Section ───────────────────────── */
+
+        /* Purchase Section (very bottom) */
         .purchase-section {
             background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
             border-radius: 2rem;
@@ -186,6 +172,8 @@
             transform: translateY(-2px);
             box-shadow: 0 12px 28px rgba(30,64,175,0.25);
         }
+
+        /* Discount Code */
         .discount-box {
             margin-top: 1.2rem;
             display: flex;
@@ -199,13 +187,13 @@
             border-radius: 0.7rem;
             border: 1px solid #cbd5e1;
             background: white;
-            color: #1e293b;
+            color: #111827;
             font-size: 0.95rem;
             outline: none;
             min-width: 180px;
         }
         .discount-box input::placeholder {
-            color: #94a3b8;
+            color: #9ca3af;
         }
         .discount-box button {
             background: white;
@@ -221,11 +209,13 @@
         .discount-box button:hover {
             background: #f0f4ff;
         }
+
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 3rem;
             font-size: 0.9rem;
-            color: #64748b;
+            color: #6b7280;
         }
         .footer a {
             color: #1e40af;
@@ -237,17 +227,12 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div class="logo-wrapper">
-                <!-- Logo image – will show if deepstem.png exists, otherwise hidden -->
-                <img src="deepstem.png" alt="DeepStem icon" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                <!-- Fallback SVG text logo -->
-                <span class="logo-fallback">DeepStem</span>
-            </div>
+            <img src="deepstem.png" alt="DeepStem icon" class="logo">
             <h1>DeepStem</h1>
             <p class="subtitle">State‑of‑the‑art AI stem separation for macOS — offline, private, and built by a DJ for DJs, producers, and anyone who loves music.</p>
         </div>
 
-        <!-- Why I Built It -->
+        <!-- Why I Built DeepStem -->
         <section>
             <h2>Why I Built DeepStem</h2>
             <p>
@@ -390,13 +375,13 @@
         <div class="purchase-section">
             <h2 style="color:#1e3a8a; margin-top:0;">Own It Forever</h2>
             <div class="price">£5.00</div>
-            <p style="color:#475569; margin-bottom:1.5rem;">One‑time purchase. No subscriptions, no ads, no data collection.</p>
+            <p style="color:#4b5563; margin-bottom:1.5rem;">One‑time purchase. No subscriptions, no ads, no data collection.</p>
             <a href="https://buy.stripe.com/00wfZhddZaOA5AN9I36wE02" target="_blank" class="btn-buy">Buy DeepStem for £5</a>
             <div class="discount-box">
                 <input type="text" id="discountCode" placeholder="Have a discount code?">
                 <button onclick="applyDiscount()">Apply</button>
             </div>
-            <p style="margin-top:1.2rem; font-size:0.9rem; color:#64748b;">
+            <p style="margin-top:1.2rem; font-size:0.9rem; color:#6b7280;">
                 Secure payment via Stripe · Instant email delivery
             </p>
         </div>
@@ -431,3 +416,5 @@
     </script>
 </body>
 </html>
+
+
